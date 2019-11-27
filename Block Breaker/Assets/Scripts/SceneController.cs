@@ -7,6 +7,7 @@ public class SceneController : MonoBehaviour
 {
 
     public void LoadNextScene() {
+        Debug.Log("NEXT LEVEL");
         int currentScene = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(currentScene + 1);
     }
