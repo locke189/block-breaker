@@ -5,15 +5,21 @@ using UnityEngine.SceneManagement;
 
 public class SceneController : MonoBehaviour
 {
+    GameController gameController;
+
+    private void Start()
+    {
+        gameController = FindObjectOfType<GameController>();
+    }
 
     public void LoadNextScene() {
-        Debug.Log("NEXT LEVEL");
         int currentScene = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(currentScene + 1);
     }
 
     public void LoadFirstScene()
     {
+        gameController.ResetGame();
         SceneManager.LoadScene(0);
     }
 
